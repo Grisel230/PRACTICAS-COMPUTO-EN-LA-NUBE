@@ -1,0 +1,9 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="80" fill="#8B5CF6" opacity="0.2"/>
+  <circle cx="100" cy="100" r="60" fill="#8B5CF6" opacity="0.4"/>
+  <circle cx="100" cy="100" r="40" fill="#8B5CF6"/>
+  <text x="100" y="90" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">OBESIDAD</text>
+  <text x="100" y="105" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">GRADO III</text>
+  <text x="100" y="120" text-anchor="middle" fill="white" font-family="Arial" font-size="8">EXTREMA</text>
+  <text x="100" y="135" text-anchor="middle" fill="white" font-family="Arial" font-size="10">⚠⚠⚠</text>
+</svg>
