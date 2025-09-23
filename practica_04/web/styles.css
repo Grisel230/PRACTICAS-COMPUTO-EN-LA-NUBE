@@ -1,0 +1,198 @@
+/* Estilos modernos con colores azules y morados */
+:root {
+  --primary-blue: #1e3a8a;
+  --secondary-blue: #3b82f6;
+  --accent-blue: #60a5fa;
+  --primary-purple: #7c3aed;
+  --secondary-purple: #a855f7;
+  --accent-purple: #c084fc;
+  --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+  --gradient-secondary: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+  --gradient-accent: linear-gradient(135deg, #60a5fa 0%, #c084fc 100%);
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --background-light: #f8fafc;
+  --background-white: #ffffff;
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-large: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Estilos globales */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: var(--gradient-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Contenedor principal de Flutter */
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--gradient-primary);
+}
+
+/* Loading spinner personalizado */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos para el contenido de Flutter cuando se carga */
+.flutter-content {
+  background: var(--background-light);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Efectos de fondo decorativos */
+.flutter-content::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(96, 165, 250, 0.05) 0%, transparent 50%);
+  z-index: -1;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -30px) rotate(120deg); }
+  66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+/* Estilos para elementos específicos de Flutter */
+.flutter-content .app-bar {
+  background: var(--gradient-primary) !important;
+  box-shadow: var(--shadow-medium) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.flutter-content .elevated-button {
+  background: var(--gradient-secondary) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-soft) !important;
+  transition: all 0.3s ease !important;
+  color: white !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  padding: 12px 24px !important;
+}
+
+.flutter-content .elevated-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-medium) !important;
+}
+
+.flutter-content .text-field {
+  background: var(--background-white) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-soft) !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+.flutter-content .text-field:focus {
+  border-color: var(--secondary-blue) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+.flutter-content .dropdown {
+  background: var(--background-white) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-soft) !important;
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+.flutter-content .dropdown:focus {
+  border-color: var(--secondary-purple) !important;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1) !important;
+}
+
+/* Cards y contenedores */
+.flutter-content .card {
+  background: var(--background-white) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--shadow-soft) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Texto personalizado */
+.flutter-content .text-primary {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
+.flutter-content .text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+/* Animaciones suaves */
+.flutter-content * {
+  transition: all 0.3s ease !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .flutter-content::before {
+    animation-duration: 15s;
+  }
+  
+  .flutter-content .elevated-button {
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Efectos de hover mejorados */
+.flutter-content .interactive:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: var(--shadow-medium) !important;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-primary);
+}
