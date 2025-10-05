@@ -11,20 +11,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:practica_09/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Pokemon types list test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that our app shows the title 'Practica 09'.
+    expect(find.text('Practica 09'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Verify that we can find the first Pokemon type in the list
+    expect(find.text('Normal'), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that ListView is present
+    expect(find.byType(ListView), findsOneWidget);
+
+    // Verify that AppBar is present
+    expect(find.byType(AppBar), findsOneWidget);
   });
 }
